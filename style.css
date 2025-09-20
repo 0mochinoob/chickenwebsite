@@ -1,0 +1,126 @@
+/* 基本設定 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #fff;
+    user-select: none;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    /* 動的なグラデーション背景 */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    transition: color 0.3s;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ダークモード用の背景（より暗いトーン） */
+body.dark-mode {
+    background: linear-gradient(-45deg, #0b192f, #1e3a5f, #3a0d3b, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* --- Liquid Glass Style --- */
+.box, .btn, #sidePanel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+}
+
+/* ダークモード時のGlass Style */
+.dark-mode .box,
+.dark-mode .btn,
+.dark-mode #sidePanel {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.box {
+    padding: 20px 40px;
+    max-width: 1000px;
+    width: 90%;
+}
+
+.btn {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- サイドパネル --- */
+#sidePanel {
+    position: fixed;
+    top: 0;
+    right: -350px; /* 初期状態は画面外 */
+    width: 300px;
+    height: 100%;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#sidePanel.open {
+    right: 0;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* --- 設定アイコンのアニメーション --- */
+#settings {
+    transition: transform 0.5s ease-in-out;
+}
+.rotating {
+    animation: rotate-setting-icon 0.25s ease-in-out;
+}
+.rotated {
+    transform: rotate(180deg);
+}
+@keyframes rotate-setting-icon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
