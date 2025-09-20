@@ -2,31 +2,37 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>
-            WELCOME TO CHICKEN
-        </title>
-            <link rel="stylesheet" href="style.css">
-            <link rel="icon" type="image" href="favicon.png">
-            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>WELCOME TO CHICKEN</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image" href="favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     </head>
+    
+    <body oncontextmenu="return false">
+        <header>
+            <img src="logo.png" width="48" height="48" class="btn" id="logo">
+            <img src="setting.png" width="48" height="48" class="btn" id="settings">
+        </header>
 
-    <header style="text-align: left;">
-        <img src="logo.png" width="48" height="48" class="btn" id="logo">
-        <img src="settings.png" width="48" height="48" class="btn" id="settings" align="right">
-    </header>
-
-    <div id="sidePanel">
-        <img src="close.png" width="48" height="48" class="closeBtn btn" id="closeBtn">
-        <h2>サイドパネル</h2>
-        <p>ここに設定などの内容を表示できます。</p>
-        <img src="dark.png" class="btn" id="themeToggle">
-    </div>
-
-    <body style="text-align: center;" oncontextmenu="return false">
-        <div class="box">
-            <h1><b>WELCOME TO CHICKEN</b></h1><br>
-            <h2>チキンへようこそ！</h2>
+        <div id="sidePanel">
+            <img src="close.png" width="48" height="48" class="closeBtn btn" id="closeBtn">
+            <h2>設定</h2>
+            <p>ダークモード</p>
+            <img src="dark.png" class="btn" id="themeToggle">
         </div>
+
+        <main class="content-wrapper">
+            <div class="box">
+                <h1><b>チキンサーバーへようこそ</b></h1>
+                <h3>チキンサーバーは、Noob_0mochiによって設立されたコミュニティサーバーとマインクラフトサーバーです。</h3>
+            </div>
+            
+            <div class="box">
+                <h1><b>チキンコミュニティサーバー</b></h1>
+                <h3>チキンコミュニティサーバーは、チキンマインクラフトサーバー用のDiscordサーバーです。</h3>
+            </div>
+        </main>
+        
         <script src="script.js"></script>
     </body>
 </html>
